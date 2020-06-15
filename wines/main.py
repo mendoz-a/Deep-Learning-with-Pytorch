@@ -7,7 +7,7 @@ import numpy as np
 from torch.distributions.beta import Beta
 from scipy.stats import pearsonr
 
-def pearsonr(data, label):
+def pearson(data, label):
     data_t = torch.from_numpy(data)
     label_t = torch.from_numpy(label)
 
@@ -43,4 +43,4 @@ if __name__ == '__main__':
     header = next(csv.reader(open(csv_file), delimiter=';'))
     label = data[:, -1]
     data = data[:, :-1]
-    print(pearsonr(data, label))
+    print(pearson(data, label))
